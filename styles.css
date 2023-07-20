@@ -1,0 +1,426 @@
+html {
+    box-sizing: border-box;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+body {
+    font-family: "Helvetica Neue", sans-serif, Arial;
+    margin: 0; /* Overwrite any extra margin that may come from default browser value */
+}
+
+h1 {
+    margin-top: 0; /* top margin was getting annoying so I just made a general rule to get rid of it */
+}
+
+/* -------------------- MOBILE VERSION DEVELOPED AT 499x720 -------------------- */
+
+header {
+    background-color: #333333;
+}
+
+header h1 {
+    color: #ea6286;
+    font-size: 1.5rem; /* Overwrite default size */
+    padding-left: 1.7rem;
+    padding-top: 1.5rem; /* nudge right and down to match mockup */
+
+    /* natural bottom margin from header takes care of nav spacing */
+}
+
+#logo, .hero h1 {
+    font-family: 'Kaushan Script', cursive, Arial; 
+}
+
+header nav {
+    padding-bottom: 1.8rem; /* Space out the grey below last li option */
+}
+
+header nav ul {
+    list-style: none; /* Overwrite default bullet points */
+    padding: 0 2rem; /* Overwrite default padding on left and right */
+}
+
+header nav ul li {
+    border-bottom: 1px solid grey;
+    padding-bottom: .75rem; /* Space between list item and border */
+    padding-left: .5rem; /* Nudge list item slightly to the right */
+    padding-top: .75rem; /* Space between friends in list */
+}
+
+header nav ul li a {
+    color: white; /* make nav options white */
+    text-decoration: none; /* get rid of that pesky default styling */
+}
+
+.hero {
+    align-items: center; /* center content along y-axis */
+    background-image: url("images/hero-bg.jpg"); /* introduce image */
+    background-position: center; /* center image */
+    background-size: cover; /* make image scale to size of container */
+    color: white;
+    display: flex;
+    flex-direction: column; /* content goes up/down instead of left to right */
+    height: 60vh; /* 60% of the viewport height */
+    justify-content: center; /* center content along x-axis */
+    padding: 0 2rem;
+}
+
+.hero h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem; 
+}
+
+.hero h2 {
+    font-size: 3rem;
+    font-weight: 500; 
+    margin-top: 0%; /* default bottom margin of h1 makes default h2 top margin unnecessary */
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.hero_button {
+    background-color: #6fd7fe;
+    border-radius: 5px; /* Rounds corners */
+    color: white;
+    font-size: 1.3rem;
+    padding: 1rem 2.5rem; /* Creates button "size" */
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.services, .portfolio {
+    padding: 0 13%; 
+    text-align: center; /* centers the text in both sections */
+}
+
+.services_header, .portfolio_header {
+    margin-bottom: 3rem; /* default h2 margin wasn't big enough for both areas */ 
+}
+
+.services_header h1, .portfolio_header h1 {
+    font-size: 1.9rem;
+    font-weight: 500;
+    margin-bottom: 0; /* allow natural top heading of h2 to set the spacing to match the jpg a bit more */
+    margin-top: 3.5rem; /* set spacing from hero section and for portfolio section */   
+}
+
+.services_header h2, .portfolio_header h2 {
+    color: grey;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 0; 
+}
+
+.service_card {
+    margin-bottom: 5rem; /* spacing for cards */
+}
+
+.service_card h3 {
+    margin-top: 1rem; 
+}
+
+.service_card p {
+    color: grey;
+    margin-bottom: 2rem; /* Push that button down just a touch more */
+}
+
+.service_button {
+    background-color: #b8345c; 
+    border-radius: 5px;
+    color: white;
+    font-size: .9rem; 
+    padding: .5rem 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.portfolio {
+    background-color: #e3e3e3;
+    padding-bottom: .1rem; 
+    padding-top: 1rem;
+    /* Only need 1 rem because of the 3rem of margin-top I added in ".portfolio_header h1" in a shared class above. the 1rem of padding acts like a 
+    "reset point" so the 3rem of margin-top starts where this ends rather than overlap with the 3rem of margin-bottom provided by the cards. the bottom spacing looks 
+    smaller on the jpg so i adjusted that to be .2rem instead of another 1 rem */
+}
+
+.portfolio_card {
+    background-color: white; /* set the card background to white so you don't have to mess around with an extra div after the image */
+    margin-bottom: 5rem;
+}
+
+.portfolio_card img {
+    width: 100%; /* scale to match the white text box below */
+}
+
+.portfolio_card h3 {
+    margin-top: 1rem; 
+}
+
+.portfolio_card p {
+    font-style: italic;
+    margin-bottom: 0; /* created margin via cards so leaving this at its natural 16px would just mess with the scaling */
+    padding-bottom: 1.5rem;
+}
+
+footer {
+    padding: 0 5%;
+}
+
+footer small {
+    display: block; /* change from inline to respect vertial properties */
+    font-size: .8rem;
+    margin-bottom: .5rem;
+    margin-top: 1rem;
+}
+
+footer nav ul {
+    list-style: none;
+    margin-top: 0;
+    padding-left: 0; /* remove indent */
+}
+
+footer nav ul li a {
+    color: #ea6286;
+    font-size: .8rem;
+    text-decoration: none;
+}
+
+/* -------------------- END OF MOBILE VERSION -------------------- */
+
+/* -------------------- TABLET VERSION DEVELOPED AT 935x720 -------------------- */
+
+@media screen and (min-width: 500px) {
+    header {
+        display: flex; /* add flex once the query triggers */
+        justify-content: space-between; /* space out the header and nav container */
+    }
+
+    header nav ul {
+        display: flex; /* add flex once query triggers */
+        margin-top: 1.1rem; /* nudge the list down just a touch so it lines up with the header more */
+    }
+
+    header h1 {
+        font-size: 1rem; /* make text smaller so it can fit horizontally */
+        margin-bottom: 1.25rem; /* push the hero img a little more so it looks like there is more spacing on the bottom like in the mockup */
+        padding-top: 1rem; /* since the h1 sets the vertical spacing for the header this adjustment fixes it so it lines up horizontally with the nav bar
+        on the right*/
+    }
+
+    header nav {
+        padding-bottom: 0; /* removes the padding from mobile version */
+    }
+
+    header nav ul li {
+        border-bottom: none;
+        padding: 0 0 0 1.5rem; /* remove top and bottom padding from mobile version since they're no longer needed and sets 1.5 rem of padding between nav bar links */
+    }
+
+    header nav ul li a {
+        font-size: .7rem;
+    }
+
+    .hero {
+        padding: 0;  /* removing a style that is no longer needed */
+    }
+
+    .hero h1 {
+        margin-bottom: .5rem; /* remove some extra spacing from mobile version */
+    }
+
+    .hero_button {
+        font-size: 1.2rem;
+        padding: .75rem 2.2rem;
+        /* adjust text size and button size to scale with rest of text */
+    }
+
+    .grid_services {
+        display: grid;
+        grid-gap: 0 2rem; /* no row gap since margin already takes care of spacing followed by 2rem column gap */
+        grid-template-columns: repeat(3, 1fr); /* set grid to have 3 columns for cards */
+    }
+
+    .services {
+        padding: 0 6%; /* scale down padding from mobile, splitting it up in the query because the jpg looks as if the services and portfolio section differ slightly */
+    }
+
+    .services_header {
+        grid-column: 1/4; /* make header span the full width of the container grid template so the cards are pushed to row 2 */
+    }
+
+    .services_header h1, .portfolio_header h1 {
+        font-size: 1.5rem;
+    }
+
+    .services_header h2, .portfolio_header h2 {
+        font-size: 1rem;
+    }
+
+    .service_card h3 {
+        font-size: 1rem; /* scale down size to make cards fit better */
+    }
+
+    .service_card p {
+        font-size: .8rem;
+        margin-bottom: 1.3rem;
+        /* was a little tough to eyeball this section since the lorem text was slightly different, apologies if my values are off */
+    }
+
+    .service_button {
+        border-radius: .3rem; /* scaling down the buttons made the original mobile styling too round, rolled it back just a touch */
+        font-size: .6rem;
+        padding: .45rem .75rem;
+    }
+
+    .grid_portfolio {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 0 1.5rem;
+    }
+
+    .portfolio {
+        padding: 0 8% 1.5rem 8%;
+    }
+
+    .portfolio_header {
+        grid-column: 1/3;
+    }
+
+    .portfolio_card {
+        margin-bottom: 2rem;
+    }
+
+    footer {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 3%;
+    }
+
+    footer small {
+        margin-bottom: 0; /* the .5rem was only needed to overwrite the default value, since they aren't stacking anymore there's no point in keeping that value */
+        margin-top: 0;
+        padding: 2rem 0;
+    }
+
+    footer nav ul {
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    footer nav ul li {
+        padding-left: .75rem;
+    }
+  }
+
+/* -------------------- END OF TABLET VERSION -------------------- */
+
+/* -------------------- DESKTOP VERSION DEVELOPED AT 1280x1000 -------------------- */
+
+@media screen and (min-width:936px) {
+    header h1 {
+        font-size: 1.2rem;
+        margin-bottom: 1.75rem;
+        padding-top: 1.75rem;
+    }
+
+    header nav ul {
+        margin-top: 2rem;
+    }
+
+    header nav ul li a {
+        font-size: .8rem;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem; /* tried to match sizing via the letter positioning from the jpg */
+    }
+
+    .hero h2 {
+        font-size: 4rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero_button {
+        padding-left: 2.3rem;
+        padding-right: 2.3rem; /* add just a few px to the left and right */
+    }
+
+    .services {
+        padding: 0 8%;
+    }
+
+    .grid_services {
+        grid-gap: 0 2.5rem;
+    }
+
+    .services_header h1,.portfolio_header h1 {
+        font-size: 2rem;
+    }
+
+    .services_header h2, .portfolio_header h2 {
+        font-size: 1.2rem;
+    }
+
+    .service_card {
+        margin-bottom: 5.5rem;
+    }
+
+    .service_card h3 {
+        font-size: 1.1rem;
+    }
+
+    .service_card p {
+        font-size: .9rem;
+        margin-bottom: 1.6rem;
+    }
+
+    .service_button {
+        font-size: .8rem;
+        padding: .5rem .95rem;
+    }
+
+    .portfolio {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .grid_portfolio {
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 0 2rem;
+    }
+
+    .portfolio {
+        padding-bottom: 2rem;
+    }
+
+    .portfolio_header {
+        grid-column: 1/4;
+    }
+
+    .portfolio_header h1 {
+        margin-top: 4.5rem;
+    }
+
+    /* based off JPG's it didn't look like the cards in portfolio had different properties so I left them as is. they do look slightly different already
+    thanks to the different grid and padding/gap */
+
+    footer small {
+        font-size: .8rem;
+        padding: 2.5rem 0;
+    }
+
+    footer nav ul li {
+        padding-left: 1rem;
+    }
+
+    footer nav ul li a {
+        font-size: .8rem;
+    }
+}
